@@ -1,6 +1,7 @@
 Pre-Requirments
 ---------------
   >npm install
+
   >ng serve
 
 # Evot
