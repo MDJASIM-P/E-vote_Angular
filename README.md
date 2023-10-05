@@ -1,3 +1,9 @@
+Pre-Requirments
+---------------
+  >npm install
+
+  >ng serve
+
 # Evot
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
