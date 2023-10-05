@@ -24,16 +24,22 @@ export class StfLogComponent {
       if (res['token'] && uname){
         localStorage.setItem('token', res['token'])
         localStorage.setItem('username', uname)
-        this.r.navigate(['staff'])
+        this.ds.is_Staff().then(res=>res.json()).then(res=>{
+          if(res==true){
+            this.r.navigate(['staff'])
+          }
+          else{
+            alert("you are not a staff!")
+          }
+        });
+        
       }
       else{
         alert('Invalid Username or Password!')
       }
     }).catch(res=>console.log(res.error))
 
-    this.ds.is_Staff().then(res=>res.json()).then(res=>{
-      console.log(res)
-    });
+    
   }
 
 }

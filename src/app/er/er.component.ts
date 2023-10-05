@@ -19,7 +19,7 @@ export class ErComponent {
   
 
   constructor(private ds:DataService, private ar:ActivatedRoute){
-
+    
       // const eid = Number(this.ar.snapshot.params['id']);
       this.ar.params.subscribe(res=>this.eid=res['id'])
       this.ds.getEvent(this.eid).then(res=>res.json()).then((e:Event)=>{

@@ -35,6 +35,10 @@ export class VoteComponent {
           console.log('Event after added voter:',res)
           alert(res['msg'])
           this.r.navigate(['eo', this.eid]);
+          history.pushState(null, '', location.href);
+          window.onpopstate = function () {
+          history.go(1);
+    };
         })
 
       }

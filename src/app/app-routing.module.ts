@@ -14,6 +14,7 @@ import { AddeventComponent } from './addevent/addevent.component';
 import { EditeventComponent } from './editevent/editevent.component';
 import { StaffhomeComponent } from './staffhome/staffhome.component';
 import { VoteridComponent } from './voterid/voterid.component';
+import { EditcandidateComponent } from './editcandidate/editcandidate.component';
 
 const routes: Routes = [
   {path:'staff', component:StaffhomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'editevent/:eid', component:EditeventComponent},
   {path:'addvoterid/:uid', component:VoteridComponent},
 
+  {path:'editcnd/:cid', component:EditcandidateComponent},
   {path:'voting/:eid/:cid', component:VoteComponent},
   {path:'er/:id', component:ErComponent},
   {path:'eo/:id', component:EoComponent},

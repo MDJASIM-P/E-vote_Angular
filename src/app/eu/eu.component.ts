@@ -83,4 +83,13 @@ export class EuComponent {
       }
     });
   }
+  deleted(e:any){
+    let cid=e.target.id
+    console.log("candidate id:", cid)
+    alert('Are you sure?')
+    this.ds.deleteCandidate(cid).then(res=>res.json()).then(res=>{
+      alert("Canidation deleted")
+      }).catch(res=>console.log(res.error))
+    window.location.reload();
+  }
 }

@@ -22,6 +22,10 @@ export class HomeComponent {
   upcoming: Event[]=[]
 
   constructor(private ds:DataService,private r:Router ){
+    if(!localStorage.getItem('token')){
+      alert('login required')
+      this.r.navigate([''])
+    }
     console.log('current dt in UTC:',this.currentDate)
     const date = new Date(); // Create a JavaScript Date object from the ISO string
     date.setUTCHours(date.getUTCHours() + 5); // Add 5 hours
@@ -77,6 +81,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
     console.log('Home component is loading')
+    
   }
   
 }

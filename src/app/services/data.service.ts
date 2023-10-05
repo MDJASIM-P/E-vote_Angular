@@ -40,10 +40,11 @@ export class DataService {
   }
 
   is_Staff(){
-    return fetch('http://127.0.0.1:8000/user/is_user_staff/',{
+    return fetch('http://127.0.0.1:8000/staff_only/',{
       method:'GET',
       headers:{
-        'Content-type':'application/json; Charset=UTF-8'
+        'Accept':'*/*',
+        'Authorization':`Token ${localStorage.getItem('token')}`
       }
     })
   }
@@ -60,7 +61,7 @@ export class DataService {
   }
   editEvent(data:any, eid:any){
     return fetch(`http://127.0.0.1:8000/event/${eid}/`,{
-      method:'PATCH',
+      method:'PUT',
       body: data,
       headers:{
         'Accept':'*/*',
@@ -137,6 +138,26 @@ export class DataService {
       headers:{
         'Accept':'*/*',
         'Authorization':`Token ${localStorage.getItem('token')}`,
+      }
+    })
+  }
+
+  editCandidate(cid:any, data:any){
+    return fetch(`http://127.0.0.1:8000/candidate/${cid}/`,{
+      method:'PATCH',
+      body: data,
+      headers:{
+        'Accept':'*/*',
+        'Authorization':`Token ${localStorage.getItem('token')}`
+      }
+    })
+  }
+  deleteCandidate(cid:any){
+    return fetch(`http://127.0.0.1:8000/candidate/${cid}/`,{
+      method:'DELETE',
+      headers:{
+        'Accept':'*/*',
+        'Authorization':`Token ${localStorage.getItem('token')}`
       }
     })
   }
